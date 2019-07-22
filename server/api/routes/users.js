@@ -1,5 +1,4 @@
 const express = require('express');
-
 const mongoose = require('mongoose');
 const app = express();
 const User=require('../model/testquery');
@@ -51,8 +50,8 @@ router.post('/update/:id',(req,res,next)=>{
         _id :id,
         name : req.body.name,
         email : req.body.email,
-        subject=req.body.subject,
-        message=req.body.message
+        subject:req.body.subject,
+        message:req.body.message
        
     };
     User.findOneAndUpdate({_id:id}, UserUpdate,(err,data)=>{
